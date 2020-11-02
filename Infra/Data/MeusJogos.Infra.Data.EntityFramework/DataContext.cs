@@ -1,7 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using MeusJogos.Contexts.JogoContext.Domain.Entities;
 using Flunt.Notifications;
-using MeusJogos.Contexts.JogoContext.Domain.ValueObjects;
+using MeusJogos.Contexts.AmigoContext.Domain.Entities;
+using MeusJogos.Infra.Data.Context.Mapping;
 
 namespace MeusJogos.Infra.Data.Context
 {
@@ -14,11 +15,14 @@ namespace MeusJogos.Infra.Data.Context
         }
 
         public DbSet<Jogo> Jogos { get; set; }
+        public DbSet<Amigo> Amigos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Ignore<Notification>();
-            modelBuilder.Ignore<Titulo>();
+
+            modelBuilder.ApplyConfiguration(new JogoConfiguration());
+            modelBuilder.ApplyConfiguration(new AmigoConfiguration());
         }
     }
 }

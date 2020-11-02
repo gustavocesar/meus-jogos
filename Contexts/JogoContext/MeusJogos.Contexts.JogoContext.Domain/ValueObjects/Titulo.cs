@@ -9,7 +9,7 @@ namespace MeusJogos.Contexts.JogoContext.Domain.ValueObjects
             Nome = nome;
 
             if (string.IsNullOrEmpty(Nome))
-                AddNotification("Titulo.Nome", "Nome inv·lido");
+                AddNotification("Titulo.Nome", "Nome inv√°lido");
         }
 
         public string Nome { get; private set; }

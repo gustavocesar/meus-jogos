@@ -9,17 +9,13 @@ namespace MeusJogos.Contexts.JogoContext.Domain.Entities
         public Jogo()
         {
         }
-
+        
         public Jogo(Titulo titulo, EPlataforma plataforma)
         {
             Titulo = titulo;
             Plataforma = plataforma;
-        }
 
-        public Jogo(string titulo, EPlataforma plataforma)
-        {
-            Titulo = new Titulo(titulo);
-            Plataforma = plataforma;
+            AddNotifications(titulo);
         }
 
         public Titulo Titulo { get; private set; }

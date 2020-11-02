@@ -24,6 +24,11 @@ namespace MeusJogos.Contexts.JogoContext.Application.Handlers
             var titulo = new Titulo(request.Titulo);
             var jogo = new Jogo(titulo, request.Plataforma);
 
+            if (jogo.Invalid)
+            {
+                var error = jogo.Notifications;
+            }
+
             _context.Jogos.Add(jogo);
             _context.SaveChanges();
 

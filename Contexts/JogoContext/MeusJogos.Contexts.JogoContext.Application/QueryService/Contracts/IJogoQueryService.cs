@@ -1,7 +1,7 @@
-using MeusJogos.Context.Application.QueryResult;
+using MeusJogos.Contexts.JogoContext.Application.QueryResult;
 using System.Collections.Generic;
 
-namespace MeusJogos.Context.Application.QueryService.Contracts
+namespace MeusJogos.Contexts.JogoContext.Application.QueryService.Contracts
 {
     public interface IJogoQueryService
     {

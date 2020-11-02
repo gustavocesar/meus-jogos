@@ -1,21 +1,21 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using MeusJogos.Contexts.JogoContext.Application.Handlers;
 using MeusJogos.Contexts.JogoContext.Application.Handlers.Contracts;
-using MeusJogos.Context.Application.QueryService;
-using MeusJogos.Context.Application.QueryService.Contracts;
+using MeusJogos.Contexts.JogoContext.Application.QueryService;
+using MeusJogos.Contexts.JogoContext.Application.QueryService.Contracts;
 using MeusJogos.Infra.Data.Context;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+using MeusJogos.Contexts.AmigoContext.Application.Handlers.Contracts;
+using MeusJogos.Contexts.AmigoContext.Application.Handlers;
+using MeusJogos.Contexts.AmigoContext.Application.QueryService.Contracts;
+using MeusJogos.Contexts.AmigoContext.Application.QueryService;
 
 namespace Api
 {
@@ -38,6 +38,8 @@ namespace Api
 
             services.AddTransient<IJogoCommandHandler, JogoCommandHandler>();
             services.AddTransient<IJogoQueryService, JogoQueryService>();
+            services.AddTransient<IAmigoCommandHandler, AmigoCommandHandler>();
+            services.AddTransient<IAmigoQueryService, AmigoQueryService>();
             services.AddScoped<DataContext, DataContext>();
 
             services.AddControllers();
