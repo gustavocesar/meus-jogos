@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\SharedKernel\MeusJogos.SharedKernel.Domain\MeusJogos.SharedKernel.Domain.csproj" />
+    <ProjectReference Include="..\..\AmigoContext\MeusJogos.Contexts.AmigoContext.Domain\MeusJogos.Contexts.AmigoContext.Domain.csproj" />
+    <ProjectReference Include="..\..\JogoContext\MeusJogos.Contexts.JogoContext.Domain\MeusJogos.Contexts.JogoContext.Domain.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+</Project>

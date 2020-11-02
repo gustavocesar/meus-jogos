@@ -25,6 +25,7 @@ namespace MeusJogos.Contexts.AmigoContext.Application.QueryService
             {
                 list.Add(new AmigoQueryResult
                 {
+                    Id = amigo.Id,
                     Nome = amigo.Nome?.ToString(),
                     Celular = amigo.Celular?.ToString()
                 });

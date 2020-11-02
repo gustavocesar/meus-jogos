@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\MeusJogos.Contexts.EmprestimoContext.Domain\MeusJogos.Contexts.EmprestimoContext.Domain.csproj" />
+    <ProjectReference Include="..\..\..\Infra\Data\MeusJogos.Infra.Data.EntityFramework\MeusJogos.Infra.Data.EntityFramework.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+</Project>

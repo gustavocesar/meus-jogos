@@ -26,6 +26,7 @@ namespace MeusJogos.Contexts.JogoContext.Application.QueryService
             {
                 list.Add(new JogoQueryResult
                 {
+                    Id = jogo.Id,
                     Titulo = jogo.Titulo?.Nome,
                     Plataforma = jogo.Plataforma.ToString()
                 });

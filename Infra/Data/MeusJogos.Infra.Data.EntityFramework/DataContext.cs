@@ -3,6 +3,7 @@ using MeusJogos.Contexts.JogoContext.Domain.Entities;
 using Flunt.Notifications;
 using MeusJogos.Contexts.AmigoContext.Domain.Entities;
 using MeusJogos.Infra.Data.Context.Mapping;
+using MeusJogos.Contexts.EmprestimoContext.Domain.Entities;
 
 namespace MeusJogos.Infra.Data.Context
 {
@@ -16,6 +17,7 @@ namespace MeusJogos.Infra.Data.Context
 
         public DbSet<Jogo> Jogos { get; set; }
         public DbSet<Amigo> Amigos { get; set; }
+        public DbSet<Emprestimo> Emprestimos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -23,6 +25,7 @@ namespace MeusJogos.Infra.Data.Context
 
             modelBuilder.ApplyConfiguration(new JogoConfiguration());
             modelBuilder.ApplyConfiguration(new AmigoConfiguration());
+            modelBuilder.ApplyConfiguration(new EmprestimoConfiguration());
         }
     }
 }

@@ -16,6 +16,10 @@ using MeusJogos.Contexts.AmigoContext.Application.Handlers.Contracts;
 using MeusJogos.Contexts.AmigoContext.Application.Handlers;
 using MeusJogos.Contexts.AmigoContext.Application.QueryService.Contracts;
 using MeusJogos.Contexts.AmigoContext.Application.QueryService;
+using MeusJogos.Contexts.EmprestimoContext.Application.Handlers.Contracts;
+using MeusJogos.Contexts.EmprestimoContext.Application.QueryService.Contracts;
+using MeusJogos.Contexts.EmprestimoContext.Application.QueryService;
+using MeusJogos.Contexts.EmprestimoContext.Application.Handlers;
 
 namespace Api
 {
@@ -40,6 +44,8 @@ namespace Api
             services.AddTransient<IJogoQueryService, JogoQueryService>();
             services.AddTransient<IAmigoCommandHandler, AmigoCommandHandler>();
             services.AddTransient<IAmigoQueryService, AmigoQueryService>();
+            services.AddTransient<IEmprestimoCommandHandler, EmprestimoCommandHandler>();
+            services.AddTransient<IEmprestimoQueryService, EmprestimoQueryService>();
             services.AddScoped<DataContext, DataContext>();
 
             services.AddControllers();

@@ -17,6 +17,11 @@ namespace MeusJogos.Contexts.AmigoContext.Domain.Entities
             AddNotifications(nome, celular);
         }
 
+        public override string ToString()
+        {
+            return $"{Nome.ToString()} - {Celular.ToString()}";
+        }
+
         public Nome Nome { get; private set; }
         public Celular Celular { get; private set; }
     }

@@ -3,6 +3,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\Contexts\JogoContext\MeusJogos.Contexts.JogoContext.Domain\MeusJogos.Contexts.JogoContext.Domain.csproj" />
     <ProjectReference Include="..\..\..\Contexts\AmigoContext\MeusJogos.Contexts.AmigoContext.Domain\MeusJogos.Contexts.AmigoContext.Domain.csproj" />
+    <ProjectReference Include="..\..\..\Contexts\EmprestimoContext\MeusJogos.Contexts.EmprestimoContext.Domain\MeusJogos.Contexts.EmprestimoContext.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
