@@ -23,27 +23,29 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra", "Infra", "{74A79FE6
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{45421B5C-722E-4833-AD1D-AB0FA6652621}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeusJogos.Infra.Data.EntityFramework", "Infra\Data\MeusJogos.Infra.Data.EntityFramework\MeusJogos.Infra.Data.EntityFramework.csproj", "{EE5B0392-F481-4276-873A-B32B5F382015}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MeusJogos.Infra.Data.EntityFramework", "Infra\Data\MeusJogos.Infra.Data.EntityFramework\MeusJogos.Infra.Data.EntityFramework.csproj", "{EE5B0392-F481-4276-873A-B32B5F382015}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AmigoContext", "AmigoContext", "{A5FA54C2-8C1A-4E9F-B044-DD14BC67BDD7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeusJogos.Contexts.AmigoContext.Tests", "Contexts\AmigoContext\MeusJogos.Contexts.AmigoContext.Tests\MeusJogos.Contexts.AmigoContext.Tests.csproj", "{03B8FA81-6DEB-46D1-8731-2CD8DCE5BBBA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MeusJogos.Contexts.AmigoContext.Tests", "Contexts\AmigoContext\MeusJogos.Contexts.AmigoContext.Tests\MeusJogos.Contexts.AmigoContext.Tests.csproj", "{03B8FA81-6DEB-46D1-8731-2CD8DCE5BBBA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EmprestimoContext", "EmprestimoContext", "{0BCDEA57-4AB5-490B-85A4-3C033B5846D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeusJogos.Contexts.EmprestimoContext.Tests", "Contexts\EmprestimoContext\MeusJogos.Contexts.EmprestimoContext.Tests\MeusJogos.Contexts.EmprestimoContext.Tests.csproj", "{EFCAD70E-782E-4527-80BB-F469E4B2B54C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MeusJogos.Contexts.EmprestimoContext.Tests", "Contexts\EmprestimoContext\MeusJogos.Contexts.EmprestimoContext.Tests\MeusJogos.Contexts.EmprestimoContext.Tests.csproj", "{EFCAD70E-782E-4527-80BB-F469E4B2B54C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeusJogos.Contexts.AmigoContext.Application", "Contexts\AmigoContext\MeusJogos.Contexts.AmigoContext.Application\MeusJogos.Contexts.AmigoContext.Application.csproj", "{ADDC9073-D2F4-453F-A6BF-5D0C22373F85}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MeusJogos.Contexts.AmigoContext.Application", "Contexts\AmigoContext\MeusJogos.Contexts.AmigoContext.Application\MeusJogos.Contexts.AmigoContext.Application.csproj", "{ADDC9073-D2F4-453F-A6BF-5D0C22373F85}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeusJogos.Contexts.AmigoContext.Domain", "Contexts\AmigoContext\MeusJogos.Contexts.AmigoContext.Domain\MeusJogos.Contexts.AmigoContext.Domain.csproj", "{BE32AE20-C164-47E5-9707-24D46246C384}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MeusJogos.Contexts.AmigoContext.Domain", "Contexts\AmigoContext\MeusJogos.Contexts.AmigoContext.Domain\MeusJogos.Contexts.AmigoContext.Domain.csproj", "{BE32AE20-C164-47E5-9707-24D46246C384}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeusJogos.Contexts.EmprestimoContext.Application", "Contexts\EmprestimoContext\MeusJogos.Contexts.EmprestimoContext.Application\MeusJogos.Contexts.EmprestimoContext.Application.csproj", "{9DC16240-AECF-4D2D-BB34-B755A6A1EE49}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MeusJogos.Contexts.EmprestimoContext.Application", "Contexts\EmprestimoContext\MeusJogos.Contexts.EmprestimoContext.Application\MeusJogos.Contexts.EmprestimoContext.Application.csproj", "{9DC16240-AECF-4D2D-BB34-B755A6A1EE49}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeusJogos.Contexts.EmprestimoContext.Domain", "Contexts\EmprestimoContext\MeusJogos.Contexts.EmprestimoContext.Domain\MeusJogos.Contexts.EmprestimoContext.Domain.csproj", "{0A9C6474-AC18-4F7B-A884-2539FED0FCA3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MeusJogos.Contexts.EmprestimoContext.Domain", "Contexts\EmprestimoContext\MeusJogos.Contexts.EmprestimoContext.Domain\MeusJogos.Contexts.EmprestimoContext.Domain.csproj", "{0A9C6474-AC18-4F7B-A884-2539FED0FCA3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CrossCutting", "CrossCutting", "{D87861EF-18DC-46A2-BEEE-0EB88FA0E5A0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auth", "Infra\CrossCutting\Auth\Auth.csproj", "{290E650D-69BC-4314-909B-DFDF8908194B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Auth", "Infra\CrossCutting\Auth\Auth.csproj", "{290E650D-69BC-4314-909B-DFDF8908194B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentation", "Presentation\Presentation.csproj", "{213C81F9-308F-4F8B-95DF-4799CA710979}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -211,6 +213,18 @@ Global
 		{290E650D-69BC-4314-909B-DFDF8908194B}.Release|x64.Build.0 = Release|Any CPU
 		{290E650D-69BC-4314-909B-DFDF8908194B}.Release|x86.ActiveCfg = Release|Any CPU
 		{290E650D-69BC-4314-909B-DFDF8908194B}.Release|x86.Build.0 = Release|Any CPU
+		{213C81F9-308F-4F8B-95DF-4799CA710979}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{213C81F9-308F-4F8B-95DF-4799CA710979}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{213C81F9-308F-4F8B-95DF-4799CA710979}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{213C81F9-308F-4F8B-95DF-4799CA710979}.Debug|x64.Build.0 = Debug|Any CPU
+		{213C81F9-308F-4F8B-95DF-4799CA710979}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{213C81F9-308F-4F8B-95DF-4799CA710979}.Debug|x86.Build.0 = Debug|Any CPU
+		{213C81F9-308F-4F8B-95DF-4799CA710979}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{213C81F9-308F-4F8B-95DF-4799CA710979}.Release|Any CPU.Build.0 = Release|Any CPU
+		{213C81F9-308F-4F8B-95DF-4799CA710979}.Release|x64.ActiveCfg = Release|Any CPU
+		{213C81F9-308F-4F8B-95DF-4799CA710979}.Release|x64.Build.0 = Release|Any CPU
+		{213C81F9-308F-4F8B-95DF-4799CA710979}.Release|x86.ActiveCfg = Release|Any CPU
+		{213C81F9-308F-4F8B-95DF-4799CA710979}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
