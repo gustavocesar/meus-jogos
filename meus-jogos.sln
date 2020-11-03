@@ -41,6 +41,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeusJogos.Contexts.Empresti
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeusJogos.Contexts.EmprestimoContext.Domain", "Contexts\EmprestimoContext\MeusJogos.Contexts.EmprestimoContext.Domain\MeusJogos.Contexts.EmprestimoContext.Domain.csproj", "{0A9C6474-AC18-4F7B-A884-2539FED0FCA3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CrossCutting", "CrossCutting", "{D87861EF-18DC-46A2-BEEE-0EB88FA0E5A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auth", "Infra\CrossCutting\Auth\Auth.csproj", "{290E650D-69BC-4314-909B-DFDF8908194B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -195,6 +199,18 @@ Global
 		{0A9C6474-AC18-4F7B-A884-2539FED0FCA3}.Release|x64.Build.0 = Release|Any CPU
 		{0A9C6474-AC18-4F7B-A884-2539FED0FCA3}.Release|x86.ActiveCfg = Release|Any CPU
 		{0A9C6474-AC18-4F7B-A884-2539FED0FCA3}.Release|x86.Build.0 = Release|Any CPU
+		{290E650D-69BC-4314-909B-DFDF8908194B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{290E650D-69BC-4314-909B-DFDF8908194B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{290E650D-69BC-4314-909B-DFDF8908194B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{290E650D-69BC-4314-909B-DFDF8908194B}.Debug|x64.Build.0 = Debug|Any CPU
+		{290E650D-69BC-4314-909B-DFDF8908194B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{290E650D-69BC-4314-909B-DFDF8908194B}.Debug|x86.Build.0 = Debug|Any CPU
+		{290E650D-69BC-4314-909B-DFDF8908194B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{290E650D-69BC-4314-909B-DFDF8908194B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{290E650D-69BC-4314-909B-DFDF8908194B}.Release|x64.ActiveCfg = Release|Any CPU
+		{290E650D-69BC-4314-909B-DFDF8908194B}.Release|x64.Build.0 = Release|Any CPU
+		{290E650D-69BC-4314-909B-DFDF8908194B}.Release|x86.ActiveCfg = Release|Any CPU
+		{290E650D-69BC-4314-909B-DFDF8908194B}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -215,6 +231,8 @@ Global
 		{BE32AE20-C164-47E5-9707-24D46246C384} = {A5FA54C2-8C1A-4E9F-B044-DD14BC67BDD7}
 		{9DC16240-AECF-4D2D-BB34-B755A6A1EE49} = {0BCDEA57-4AB5-490B-85A4-3C033B5846D5}
 		{0A9C6474-AC18-4F7B-A884-2539FED0FCA3} = {0BCDEA57-4AB5-490B-85A4-3C033B5846D5}
+		{D87861EF-18DC-46A2-BEEE-0EB88FA0E5A0} = {74A79FE6-159D-43DC-9079-2EB2A8E75BA9}
+		{290E650D-69BC-4314-909B-DFDF8908194B} = {D87861EF-18DC-46A2-BEEE-0EB88FA0E5A0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D91A542A-ED40-48EF-8841-E7B5A1C1B8D6}

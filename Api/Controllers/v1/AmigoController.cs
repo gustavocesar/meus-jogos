@@ -10,6 +10,7 @@ using MeusJogos.Contexts.AmigoContext.Application.Responses;
 using Microsoft.AspNetCore.Mvc;
 using MeusJogos.Contexts.AmigoContext.Application.QueryService.Contracts;
 using MeusJogos.Contexts.AmigoContext.Application.QueryResult;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MeusJogos.Api.Controllers.V1
 {
@@ -30,6 +31,7 @@ namespace MeusJogos.Api.Controllers.V1
 
         [Route("")]
         [HttpGet]
+        [Authorize]
         public ICollection<AmigoQueryResult> Get()
         {
             return _amigoQueryService.GetAmigos();
@@ -37,6 +39,7 @@ namespace MeusJogos.Api.Controllers.V1
 
         [Route("")]
         [HttpPost]
+        [Authorize(Roles = "Administrador")]
         public CriarAmigoResponse CriarAmigo([FromBody] CriarAmigoRequest command)
         {
             return _handler.Handle(command);

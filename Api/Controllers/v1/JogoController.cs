@@ -8,6 +8,7 @@ using MeusJogos.Contexts.JogoContext.Application.Handlers.Contracts;
 using MeusJogos.Contexts.JogoContext.Application.Requests;
 using MeusJogos.Contexts.JogoContext.Application.Responses;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MeusJogos.Api.Controllers.V1
 {
@@ -18,9 +19,7 @@ namespace MeusJogos.Api.Controllers.V1
         private readonly IJogoCommandHandler _handler;
         private readonly IJogoQueryService _jogoQueryService;
 
-        public JogoController(IJogoCommandHandler handler,
-            IJogoQueryService jogoQueryService
-            )
+        public JogoController(IJogoCommandHandler handler, IJogoQueryService jogoQueryService)
         {
             _handler = handler;
             _jogoQueryService = jogoQueryService;
@@ -28,6 +27,7 @@ namespace MeusJogos.Api.Controllers.V1
 
         [Route("")]
         [HttpGet]
+        [Authorize]
         public ICollection<JogoQueryResult> Get()
         {
             return _jogoQueryService.GetJogos();
@@ -35,6 +35,7 @@ namespace MeusJogos.Api.Controllers.V1
 
         [Route("")]
         [HttpPost]
+        [Authorize(Roles = "Administrador")]
         public CriarJogoResponse CriarJogo([FromBody] CriarJogoRequest command)
         {
             return _handler.Handle(command);

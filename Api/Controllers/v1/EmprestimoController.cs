@@ -8,6 +8,7 @@ using MeusJogos.Contexts.EmprestimoContext.Application.QueryService.Contracts;
 using MeusJogos.Contexts.EmprestimoContext.Application.QueryResult;
 using MeusJogos.Contexts.EmprestimoContext.Application.Response;
 using MeusJogos.Contexts.EmprestimoContext.Application.Requests;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MeusJogos.Api.Controllers.V1
 {
@@ -28,6 +29,7 @@ namespace MeusJogos.Api.Controllers.V1
 
         [Route("")]
         [HttpGet]
+        [Authorize]
         public ICollection<EmprestimoQueryResult> Get()
         {
             return _emprestimoQueryService.GetEmprestimos();
@@ -35,6 +37,7 @@ namespace MeusJogos.Api.Controllers.V1
 
         [Route("")]
         [HttpPost]
+        [Authorize(Roles = "Administrador")]
         public CriarEmprestimoResponse CriarEmprestimo([FromBody] CriarEmprestimoRequest command)
         {
             return _handler.Handle(command);
