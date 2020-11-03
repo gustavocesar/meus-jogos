@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  sqlserver.database:
+    image: microsoft/mssql-server-linux:latest
+    container_name: sql-server
+    environment:
+      SA_PASSWORD: "meus-jogos@pwd"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1435:1433"

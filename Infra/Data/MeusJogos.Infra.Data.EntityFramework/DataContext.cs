@@ -4,6 +4,8 @@ using Flunt.Notifications;
 using MeusJogos.Contexts.AmigoContext.Domain.Entities;
 using MeusJogos.Infra.Data.Context.Mapping;
 using MeusJogos.Contexts.EmprestimoContext.Domain.Entities;
+using Microsoft.Extensions.Configuration;
+using System.IO;
 
 namespace MeusJogos.Infra.Data.Context
 {
@@ -12,7 +14,6 @@ namespace MeusJogos.Infra.Data.Context
         public DataContext(DbContextOptions<DataContext> options)
             : base(options)
         {
-            //connection string
         }
 
         public DbSet<Jogo> Jogos { get; set; }
@@ -26,6 +27,21 @@ namespace MeusJogos.Infra.Data.Context
             modelBuilder.ApplyConfiguration(new JogoConfiguration());
             modelBuilder.ApplyConfiguration(new AmigoConfiguration());
             modelBuilder.ApplyConfiguration(new EmprestimoConfiguration());
+        }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+                //var configuration = new ConfigurationBuilder()
+                //     .SetBasePath(Directory.GetCurrentDirectory() + "/../../MyApiFolder")
+                //     .AddJsonFile("appsettings.json", false, true)
+                //     .Build();
+                //var connectionString = configuration.GetConnectionString("DefaultConnection");
+
+                //optionsBuilder.UseSqlServer(connectionString);
+                optionsBuilder.UseSqlServer("Data Source=localhosts,1435;Initial Catalog=MEUS_JOGOS;User ID=sa;Password=meus-jogos@pwd");
+            }
         }
     }
 }

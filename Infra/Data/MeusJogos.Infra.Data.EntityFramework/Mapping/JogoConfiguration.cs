@@ -11,7 +11,7 @@ namespace MeusJogos.Infra.Data.Context.Mapping
 
             builder.OwnsOne(x => x.Titulo)
                 .Property(x => x.Nome)
-                // .HasColumnName("NOME")
+                .HasColumnName("Nome")
                 .IsRequired();
         }
     }

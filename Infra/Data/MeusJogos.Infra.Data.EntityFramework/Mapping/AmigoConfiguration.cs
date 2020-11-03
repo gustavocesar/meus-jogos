@@ -11,22 +11,22 @@ namespace MeusJogos.Infra.Data.Context.Mapping
 
             builder.OwnsOne(x => x.Nome)
                 .Property(x => x.PrimeiroNome)
-                // .HasColumnName("PRIMEIRO_NOME")
+                .HasColumnName("PrimeiroNome")
                 .IsRequired();
 
             builder.OwnsOne(x => x.Nome)
                 .Property(x => x.SobreNome)
-                // .HasColumnName("SOBRE_NOME")
+                .HasColumnName("SobreNome")
                 .IsRequired();
 
             builder.OwnsOne(x => x.Celular)
                 .Property(x => x.Ddd)
-                // .HasColumnName("DDD")
+                .HasColumnName("Ddd")
                 .IsRequired();
 
             builder.OwnsOne(x => x.Celular)
                 .Property(x => x.Numero)
-                // .HasColumnName("NUMERO")
+                .HasColumnName("Numero")
                 .IsRequired();
         }
     }
