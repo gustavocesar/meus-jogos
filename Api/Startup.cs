@@ -20,6 +20,7 @@ using MeusJogos.Contexts.EmprestimoContext.Application.Handlers.Contracts;
 using MeusJogos.Contexts.EmprestimoContext.Application.QueryService.Contracts;
 using MeusJogos.Contexts.EmprestimoContext.Application.QueryService;
 using MeusJogos.Contexts.EmprestimoContext.Application.Handlers;
+using Microsoft.OpenApi.Models;
 
 namespace Api
 {
@@ -36,8 +37,7 @@ namespace Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<DataContext>(
-                // options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
-                options => options.UseInMemoryDatabase("Database")
+                 options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
             );
 
             services.AddTransient<IJogoCommandHandler, JogoCommandHandler>();
@@ -47,6 +47,11 @@ namespace Api
             services.AddTransient<IEmprestimoCommandHandler, EmprestimoCommandHandler>();
             services.AddTransient<IEmprestimoQueryService, EmprestimoQueryService>();
             services.AddScoped<DataContext, DataContext>();
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Meus Jogos", Version = "v1" });
+            });
 
             services.AddControllers();
         }
@@ -68,6 +73,17 @@ namespace Api
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+            });
+
+            //Configurando Swagger
+            app.UseSwagger();
+            app.UseSwaggerUI(option => option.SwaggerEndpoint("/swagger/v1/swagger.json", "get API V1"));
+            app.UseWelcomePage("/swagger");
+
+            app.Run(context =>
+            {
+                context.Response.Redirect("/swagger/index.html");
+                return Task.CompletedTask;
             });
         }
     }
