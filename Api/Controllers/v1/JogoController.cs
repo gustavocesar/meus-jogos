@@ -56,5 +56,14 @@ namespace MeusJogos.Api.Controllers.V1
         {
             return _handler.Handle(command);
         }
+
+
+        [Route("")]
+        [HttpDelete]
+        [Authorize(Roles = "Administrador")]
+        public ExcluirJogoResponse ExcluirJogo([FromBody] ExcluirJogoRequest command)
+        {
+            return _handler.Handle(command);
+        }
     }
 }

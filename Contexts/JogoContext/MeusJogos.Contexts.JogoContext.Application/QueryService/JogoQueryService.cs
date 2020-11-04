@@ -30,7 +30,10 @@ namespace MeusJogos.Contexts.JogoContext.Application.QueryService
 
         public ICollection<JogoQueryResult> GetJogos()
         {
-            var jogos = _context.Jogos.ToList();
+            var jogos = _context.Jogos
+                .OrderBy(x => x.Titulo.Nome)
+                .ToList();
+
             var list = new List<JogoQueryResult>();
 
             foreach (var jogo in jogos)

@@ -1,6 +1,7 @@
 using MeusJogos.Contexts.JogoContext.Domain.Enums;
 using MeusJogos.Contexts.JogoContext.Domain.ValueObjects;
 using MeusJogos.SharedKernel.Domain.Entities;
+using System;
 
 namespace MeusJogos.Contexts.JogoContext.Domain.Entities
 {
@@ -9,7 +10,7 @@ namespace MeusJogos.Contexts.JogoContext.Domain.Entities
         public Jogo()
         {
         }
-        
+
         public Jogo(Titulo titulo, EPlataforma plataforma)
         {
             Titulo = titulo;
@@ -30,6 +31,10 @@ namespace MeusJogos.Contexts.JogoContext.Domain.Entities
         {
             Titulo.AlterarTitulo(titulo);
             Plataforma = plataforma;
+        }
+
+        public void ExcluirJogo(Guid id)
+        {
         }
     }
 }

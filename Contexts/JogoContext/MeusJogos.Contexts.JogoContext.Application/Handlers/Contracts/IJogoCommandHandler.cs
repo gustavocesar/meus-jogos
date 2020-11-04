@@ -7,5 +7,6 @@ namespace MeusJogos.Contexts.JogoContext.Application.Handlers.Contracts
     {
         CriarJogoResponse Handle(CriarJogoRequest request);
         AlterarJogoResponse Handle(AlterarJogoRequest request);
+        ExcluirJogoResponse Handle(ExcluirJogoRequest request);
     }
 }
