@@ -8,7 +8,6 @@ using MeusJogos.Infra.Data.Context;
 
 namespace MeusJogos.Contexts.AmigoContext.Application.Handlers
 {
-    //injetar o repository
     public class AmigoCommandHandler : IAmigoCommandHandler
     {
         private readonly DataContext _context;

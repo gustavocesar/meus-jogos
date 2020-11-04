@@ -5,6 +5,7 @@ namespace MeusJogos.Contexts.EmprestimoContext.Application.Handlers.Contracts
 {
     public interface IEmprestimoCommandHandler
     {
-        CriarEmprestimoResponse Handle(CriarEmprestimoRequest request);
+        EmprestarJogoResponse Handle(EmprestarJogoRequest request);
+        DevolverJogoResponse Handle(DevolverJogoRequest request);
     }
 }

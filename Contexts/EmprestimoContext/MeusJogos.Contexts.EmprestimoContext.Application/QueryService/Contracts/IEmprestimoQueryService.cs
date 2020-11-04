@@ -6,5 +6,7 @@ namespace MeusJogos.Contexts.EmprestimoContext.Application.QueryService.Contract
     public interface IEmprestimoQueryService
     {
         ICollection<EmprestimoQueryResult> GetEmprestimos();
+        ICollection<JogosEmprestadosQueryResult> GetJogosEmprestados();
+        ICollection<JogosDisponiveisQueryResult> GetJogosDisponiveis();
     }
 }

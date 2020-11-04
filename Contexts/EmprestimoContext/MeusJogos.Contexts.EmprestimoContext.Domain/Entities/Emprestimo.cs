@@ -24,5 +24,10 @@ namespace MeusJogos.Contexts.EmprestimoContext.Domain.Entities
         public Jogo Jogo { get; private set; }
         public DateTime DataEmprestimo { get; private set; }
         public DateTime? DataDevolucao { get; private set; }
+
+        public void Devolver()
+        {
+            DataDevolucao = DateTime.Now;
+        }
     }
 }

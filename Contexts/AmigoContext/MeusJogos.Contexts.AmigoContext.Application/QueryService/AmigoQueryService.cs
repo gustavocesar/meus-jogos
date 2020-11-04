@@ -4,6 +4,7 @@ using MeusJogos.Contexts.AmigoContext.Domain.Entities;
 using MeusJogos.Infra.Data.Context;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace MeusJogos.Contexts.AmigoContext.Application.QueryService
 {
@@ -18,7 +19,10 @@ namespace MeusJogos.Contexts.AmigoContext.Application.QueryService
 
         public ICollection<AmigoQueryResult> GetAmigos()
         {
-            var amigos = _context.Amigos;
+            var amigos = _context.Amigos
+                .OrderBy(x => x.Nome.PrimeiroNome)
+                .ToList();
+
             var list = new List<AmigoQueryResult>();
 
             foreach (var amigo in amigos)

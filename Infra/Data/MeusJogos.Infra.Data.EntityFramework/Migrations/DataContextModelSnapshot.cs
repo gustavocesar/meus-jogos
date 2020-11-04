@@ -36,7 +36,7 @@ namespace MeusJogos.Infra.Data.EntityFramework.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid?>("AmigoId")
+                    b.Property<Guid>("Amigo_Id")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime?>("DataDevolucao")
@@ -45,14 +45,14 @@ namespace MeusJogos.Infra.Data.EntityFramework.Migrations
                     b.Property<DateTime>("DataEmprestimo")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid?>("JogoId")
+                    b.Property<Guid>("Jogo_Id")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AmigoId");
+                    b.HasIndex("Amigo_Id");
 
-                    b.HasIndex("JogoId");
+                    b.HasIndex("Jogo_Id");
 
                     b.ToTable("Emprestimos");
                 });
@@ -124,11 +124,15 @@ namespace MeusJogos.Infra.Data.EntityFramework.Migrations
                 {
                     b.HasOne("MeusJogos.Contexts.AmigoContext.Domain.Entities.Amigo", "Amigo")
                         .WithMany()
-                        .HasForeignKey("AmigoId");
+                        .HasForeignKey("Amigo_Id")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.HasOne("MeusJogos.Contexts.JogoContext.Domain.Entities.Jogo", "Jogo")
                         .WithMany()
-                        .HasForeignKey("JogoId");
+                        .HasForeignKey("Jogo_Id")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("MeusJogos.Contexts.JogoContext.Domain.Entities.Jogo", b =>

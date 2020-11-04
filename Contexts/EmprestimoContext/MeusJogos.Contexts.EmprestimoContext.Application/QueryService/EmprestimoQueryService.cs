@@ -5,6 +5,7 @@ using MeusJogos.Infra.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace MeusJogos.Contexts.EmprestimoContext.Application.QueryService
 {
@@ -20,6 +21,7 @@ namespace MeusJogos.Contexts.EmprestimoContext.Application.QueryService
         public ICollection<EmprestimoQueryResult> GetEmprestimos()
         {
             var emprestimos = _context.Emprestimos
+                .OrderBy(x => x.Jogo.Titulo.Nome)
                 .Include(j => j.Jogo)
                 .Include(a => a.Amigo);
 
@@ -38,6 +40,39 @@ namespace MeusJogos.Contexts.EmprestimoContext.Application.QueryService
             }
 
             return list;
+        }
+
+        public ICollection<JogosEmprestadosQueryResult> GetJogosEmprestados()
+        {
+            return (
+                from j in _context.Jogos
+                join e in _context.Emprestimos on j.Id equals e.Jogo.Id
+                join a in _context.Amigos on e.Amigo.Id equals a.Id
+                orderby j.Titulo.Nome
+                select new JogosEmprestadosQueryResult
+                {
+                    Id = e.Id,
+                    Amigo = a.ToString(),
+                    Jogo = j.ToString(),
+                    DataEmprestimo = e.DataEmprestimo
+                })
+                .ToList();
+        }
+
+        public ICollection<JogosDisponiveisQueryResult> GetJogosDisponiveis()
+        {
+            return (
+                from j in _context.Jogos
+                join e in _context.Emprestimos on j.Id equals e.Jogo.Id into emp
+                from leftEmprestimos in emp.DefaultIfEmpty()
+                where leftEmprestimos.Id == null
+                orderby j.Titulo.Nome
+                select new JogosDisponiveisQueryResult
+                {
+                    Id = j.Id,
+                    Jogo = j.ToString()
+                })
+                .ToList();
         }
     }
 }

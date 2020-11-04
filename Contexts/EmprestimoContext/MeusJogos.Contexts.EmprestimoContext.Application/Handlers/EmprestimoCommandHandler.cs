@@ -8,7 +8,6 @@ using MeusJogos.Infra.Data.Context;
 
 namespace MeusJogos.Contexts.EmprestimoContext.Application.Handlers
 {
-    //injetar o repository
     public class EmprestimoCommandHandler : IEmprestimoCommandHandler
     {
         private readonly DataContext _context;
@@ -18,7 +17,7 @@ namespace MeusJogos.Contexts.EmprestimoContext.Application.Handlers
             _context = context;
         }
 
-        public CriarEmprestimoResponse Handle(CriarEmprestimoRequest request)
+        public EmprestarJogoResponse Handle(EmprestarJogoRequest request)
         {
             var amigo = _context.Amigos
                 .Where(a => a.Id == request.AmigoId)
@@ -32,11 +31,26 @@ namespace MeusJogos.Contexts.EmprestimoContext.Application.Handlers
             _context.Emprestimos.Add(emprestimo);
             _context.SaveChanges();
 
-            return new CriarEmprestimoResponse
+            return new EmprestarJogoResponse
             {
                 Id = emprestimo.Id,
                 Amigo = amigo,
                 Jogo = jogo
+            };
+        }
+
+        public DevolverJogoResponse Handle(DevolverJogoRequest request)
+        {
+            var emprestimo = _context.Emprestimos
+                .Where(x => x.Id == request.EmprestimoId)
+                .FirstOrDefault();
+
+            emprestimo.Devolver();
+            _context.Emprestimos.Update(emprestimo);
+            _context.SaveChanges();
+
+            return new DevolverJogoResponse
+            {
             };
         }
     }

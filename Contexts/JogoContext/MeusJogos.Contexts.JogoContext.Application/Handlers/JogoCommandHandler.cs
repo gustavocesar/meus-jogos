@@ -10,7 +10,6 @@ using MeusJogos.Infra.Data.Context;
 
 namespace MeusJogos.Contexts.JogoContext.Application.Handlers
 {
-    //injetar o repository
     public class JogoCommandHandler : IJogoCommandHandler
     {
         private readonly DataContext _context;

@@ -55,14 +55,20 @@ export default class IndexViewComponent {
       let titulo = this.titulo.val();
       let plataforma = parseInt(this.plataforma.val(), 10);
 
-      if (id) await JogoService.editar(id, titulo, plataforma);
-      else await JogoService.incluir(titulo, plataforma);
+      let acao = "";
+      if (id) {
+        await JogoService.editar(id, titulo, plataforma);
+        acao = "editado";
+      } else {
+        await JogoService.incluir(titulo, plataforma);
+        acao = "incluído";
+      }
 
       this.id.val("");
       this.titulo.val("");
       this.plataforma.val(0);
 
-      NotificationService.success("Jogo incluído com sucesso");
+      NotificationService.success(`Jogo ${acao} com sucesso`);
       this.loadJogos();
     } catch (error) {
       NotificationService.error(error);

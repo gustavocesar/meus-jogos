@@ -38,9 +38,33 @@ namespace MeusJogos.Api.Controllers.V1
         [Route("")]
         [HttpPost]
         [Authorize(Roles = "Administrador")]
-        public CriarEmprestimoResponse CriarEmprestimo([FromBody] CriarEmprestimoRequest command)
+        public EmprestarJogoResponse EmprestarJogo([FromBody] EmprestarJogoRequest command)
         {
             return _handler.Handle(command);
+        }
+
+        [Route("devolver")]
+        [HttpPut]
+        [Authorize(Roles = "Administrador")]
+        public DevolverJogoResponse DevolverJogo([FromBody] DevolverJogoRequest command)
+        {
+            return _handler.Handle(command);
+        }
+
+        [Route("get-jogos-emprestados")]
+        [HttpGet]
+        [Authorize]
+        public ICollection<JogosEmprestadosQueryResult> GetJogosEmprestados()
+        {
+            return _emprestimoQueryService.GetJogosEmprestados();
+        }
+
+        [Route("get-jogos-disponiveis")]
+        [HttpGet]
+        [Authorize]
+        public ICollection<JogosDisponiveisQueryResult> GetJogosDisponiveis()
+        {
+            return _emprestimoQueryService.GetJogosDisponiveis();
         }
     }
 }

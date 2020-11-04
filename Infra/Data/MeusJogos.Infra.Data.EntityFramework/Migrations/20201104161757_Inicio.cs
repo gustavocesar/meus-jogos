@@ -40,8 +40,8 @@ namespace MeusJogos.Infra.Data.EntityFramework.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(nullable: false),
-                    AmigoId = table.Column<Guid>(nullable: true),
-                    JogoId = table.Column<Guid>(nullable: true),
+                    Amigo_Id = table.Column<Guid>(nullable: false),
+                    Jogo_Id = table.Column<Guid>(nullable: false),
                     DataEmprestimo = table.Column<DateTime>(nullable: false),
                     DataDevolucao = table.Column<DateTime>(nullable: true)
                 },
@@ -49,28 +49,28 @@ namespace MeusJogos.Infra.Data.EntityFramework.Migrations
                 {
                     table.PrimaryKey("PK_Emprestimos", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Emprestimos_Amigos_AmigoId",
-                        column: x => x.AmigoId,
+                        name: "FK_Emprestimos_Amigos_Amigo_Id",
+                        column: x => x.Amigo_Id,
                         principalTable: "Amigos",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Emprestimos_Jogos_JogoId",
-                        column: x => x.JogoId,
+                        name: "FK_Emprestimos_Jogos_Jogo_Id",
+                        column: x => x.Jogo_Id,
                         principalTable: "Jogos",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Emprestimos_AmigoId",
+                name: "IX_Emprestimos_Amigo_Id",
                 table: "Emprestimos",
-                column: "AmigoId");
+                column: "Amigo_Id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Emprestimos_JogoId",
+                name: "IX_Emprestimos_Jogo_Id",
                 table: "Emprestimos",
-                column: "JogoId");
+                column: "Jogo_Id");
 
             //SEEDS
             migrationBuilder.InsertData(
