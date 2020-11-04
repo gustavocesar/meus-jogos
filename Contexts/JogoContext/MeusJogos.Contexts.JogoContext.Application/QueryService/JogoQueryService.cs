@@ -17,6 +17,17 @@ namespace MeusJogos.Contexts.JogoContext.Application.QueryService
             _context = context;
         }
 
+        public JogoQueryResult GetJogo(Guid id)
+        {
+            var jogo = _context.Jogos.Where(x => x.Id == id).FirstOrDefault();
+            return new JogoQueryResult
+            {
+                Id = jogo.Id,
+                Titulo = jogo.Titulo?.Nome,
+                Plataforma = jogo.Plataforma.ToString()
+            };
+        }
+
         public ICollection<JogoQueryResult> GetJogos()
         {
             var jogos = _context.Jogos.ToList();

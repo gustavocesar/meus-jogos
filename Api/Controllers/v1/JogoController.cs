@@ -33,10 +33,26 @@ namespace MeusJogos.Api.Controllers.V1
             return _jogoQueryService.GetJogos();
         }
 
+        [Route("{id:Guid}")]
+        [HttpGet]
+        [Authorize]
+        public JogoQueryResult Get(Guid id)
+        {
+            return _jogoQueryService.GetJogo(id);
+        }
+
         [Route("")]
         [HttpPost]
         [Authorize(Roles = "Administrador")]
         public CriarJogoResponse CriarJogo([FromBody] CriarJogoRequest command)
+        {
+            return _handler.Handle(command);
+        }
+
+        [Route("")]
+        [HttpPut]
+        [Authorize(Roles = "Administrador")]
+        public AlterarJogoResponse AlterarJogo([FromBody] AlterarJogoRequest command)
         {
             return _handler.Handle(command);
         }

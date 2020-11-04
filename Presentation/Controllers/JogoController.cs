@@ -12,5 +12,16 @@ namespace Presentation.Controllers
         {
             return View();
         }
+
+        public IActionResult Incluir()
+        {
+            return View();
+        }
+
+        public IActionResult Editar(int id)
+        {
+            ViewBag.Id = id;
+            return View();
+        }
     }
 }

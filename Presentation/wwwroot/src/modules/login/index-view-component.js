@@ -1,5 +1,4 @@
 import AuthService from "../../services/auth.service.js";
-import NotificationService from "../../services/notification.service.js";
 
 export default class IndexViewComponent {
   constructor() {
@@ -17,6 +16,6 @@ export default class IndexViewComponent {
         localStorage.setItem("meus-jogos-token", response.token);
         window.location.href = "/Home";
       })
-      .catch((e) => NotificationService.error(e.responseJSON.message));
+      .catch((e) => alert(e.responseJSON.message));
   }
 }

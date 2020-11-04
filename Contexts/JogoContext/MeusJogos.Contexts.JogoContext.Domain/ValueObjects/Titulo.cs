@@ -13,5 +13,10 @@ namespace MeusJogos.Contexts.JogoContext.Domain.ValueObjects
         }
 
         public string Nome { get; private set; }
+
+        public void AlterarTitulo(string nome)
+        {
+            Nome = nome;
+        }
     }
 }

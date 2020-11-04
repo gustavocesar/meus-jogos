@@ -18,12 +18,18 @@ namespace MeusJogos.Contexts.JogoContext.Domain.Entities
             AddNotifications(titulo);
         }
 
+        public Titulo Titulo { get; private set; }
+        public EPlataforma Plataforma { get; private set; }
+
         public override string ToString()
         {
             return $"{Titulo.Nome} ({Plataforma.ToString()})";
         }
 
-        public Titulo Titulo { get; private set; }
-        public EPlataforma Plataforma { get; private set; }
+        public void AlterarJogo(string titulo, EPlataforma plataforma)
+        {
+            Titulo.AlterarTitulo(titulo);
+            Plataforma = plataforma;
+        }
     }
 }

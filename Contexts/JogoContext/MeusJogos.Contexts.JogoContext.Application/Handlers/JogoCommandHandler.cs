@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using MeusJogos.Contexts.JogoContext.Application.Handlers.Contracts;
 using MeusJogos.Contexts.JogoContext.Application.Requests;
 using MeusJogos.Contexts.JogoContext.Application.Responses;
@@ -33,6 +34,23 @@ namespace MeusJogos.Contexts.JogoContext.Application.Handlers
             _context.SaveChanges();
 
             return new CriarJogoResponse
+            {
+                Id = jogo.Id,
+                Titulo = jogo.Titulo.Nome,
+                Plataforma = jogo.Plataforma
+            };
+        }
+
+        public AlterarJogoResponse Handle(AlterarJogoRequest request)
+        {
+            var jogo = _context.Jogos.Where(x => x.Id == request.Id).FirstOrDefault();
+            
+            jogo.AlterarJogo(request.Titulo, request.Plataforma);
+
+            _context.Jogos.Update(jogo);
+            _context.SaveChanges();
+
+            return new AlterarJogoResponse
             {
                 Id = jogo.Id,
                 Titulo = jogo.Titulo.Nome,
