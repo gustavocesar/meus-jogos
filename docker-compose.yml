@@ -1,6 +1,14 @@
 version: "3"
 
 services:
+  # core.aspnet:
+  #   image: mcr.microsoft.com/dotnet/core/aspnet
+  #   container_name: core-aspnet
+
+  # core.runtime:
+  #   image: mcr.microsoft.com/dotnet/core/runtime
+  #   container_name: core-runtime
+    
   sqlserver.database:
     image: microsoft/mssql-server-linux:latest
     container_name: sql-server
@@ -9,18 +17,23 @@ services:
       ACCEPT_EULA: "Y"
     ports:
       - "1435:1433"
-  
+
   meusjogos.api:
     image: meus-jogos-api
     container_name: meus-jogos-api
     ports:
       - "5001:5001"
-      - "5000:5000"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    depends_on:
+      - sqlserver.database
 
   meusjogos.front:
     image: meus-jogos-front
     container_name: meus-jogos-front
     ports:
-      - "44325:5001"
-      - "44324:5000"
-
+      - "1234:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    depends_on:
+      - meusjogos.api
