@@ -18,7 +18,7 @@
     "Presentation": {
       "commandName": "Project",
       "launchBrowser": true,
-      "applicationUrl": "https://localhost:4463;http://localhost:4467",
+      "applicationUrl": "https://localhost:44325;http://localhost:44324",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

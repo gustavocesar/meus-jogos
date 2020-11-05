@@ -9,3 +9,19 @@ services:
       ACCEPT_EULA: "Y"
     ports:
       - "1435:1433"
+  
+  #meusjogos.api:
+  #  image: 
+  #  container_name: meus-jogos-api
+  #  ports:
+  #    - "5001:5001"
+  #    - "5000:5000"
+
+  #meusjogos.front:
+  #  image: 
+  #  container_name: meus-jogos-front
+  #  ports:
+  #    - "44325:44325"
+  #    - "44324:44324"
+
+
