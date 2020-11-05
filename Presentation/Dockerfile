@@ -1,16 +1,5 @@
-FROM microsoft/aspnetcore-build:2.0 AS build-env
+FROM mcr.microsoft.com/dotnet/core/runtime:3.1
+LABEL version="1.0" mainteiner="Gustavo César de Melo"
 WORKDIR /app
-
-# Copiar csproj e restaurar dependencias
-COPY *.csproj ./
-RUN dotnet restore
-
-# Build da aplicacao
-COPY . ./
-RUN dotnet publish -c Release -o out
-
-# Build da imagem
-FROM microsoft/aspnetcore:2.0
-WORKDIR /app
-COPY --from=build-env /app/out .
-ENTRYPOINT ["dotnet", "MeusJogosFront.dll"]
+COPY ./dist .
+ENTRYPOINT [ "dotnet", "Presentation.dll" ]

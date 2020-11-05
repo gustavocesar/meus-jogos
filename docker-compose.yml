@@ -10,18 +10,17 @@ services:
     ports:
       - "1435:1433"
   
-  #meusjogos.api:
-  #  image: 
-  #  container_name: meus-jogos-api
-  #  ports:
-  #    - "5001:5001"
-  #    - "5000:5000"
+  meusjogos.api:
+    image: meus-jogos-api
+    container_name: meus-jogos-api
+    ports:
+      - "5001:5001"
+      - "5000:5000"
 
-  #meusjogos.front:
-  #  image: 
-  #  container_name: meus-jogos-front
-  #  ports:
-  #    - "44325:44325"
-  #    - "44324:44324"
-
+  meusjogos.front:
+    image: meus-jogos-front
+    container_name: meus-jogos-front
+    ports:
+      - "44325:5001"
+      - "44324:5000"
 
