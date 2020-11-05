@@ -33,3 +33,8 @@ docker build -t meus-jogos-front -f Dockerfile .
 cd ..
 docker-compose up -d
 ```
+
+### Acesso
+
+ - admin: 123456
+ - user: 123456

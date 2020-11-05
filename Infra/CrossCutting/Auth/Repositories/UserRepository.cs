@@ -13,7 +13,7 @@ namespace MeusJogos.Infra.CrossCutting.Auth.Repositories
       return new List<User>
       {
         new User { Id = 1, Username = "admin", Password = "123456", Role = "Administrador" },
-        new User { Id = 1, Username = "user", Password = "123456", Role = "Usuario" },
+        new User { Id = 2, Username = "user", Password = "123456", Role = "Usuario" },
       };
     }
 
