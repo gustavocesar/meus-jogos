@@ -9,11 +9,11 @@ services:
   #   image: mcr.microsoft.com/dotnet/core/runtime
   #   container_name: core-runtime
     
-  sqlserver.database:
+  sql-server:
     image: microsoft/mssql-server-linux:latest
     container_name: sql-server
     environment:
-      SA_PASSWORD: "meus-jogos@pwd"
+      SA_PASSWORD: "Meus-jogos@123"
       ACCEPT_EULA: "Y"
     ports:
       - "1435:1433"
@@ -22,17 +22,19 @@ services:
     image: meus-jogos-api
     container_name: meus-jogos-api
     ports:
-      - "5001:5001"
+      - "5001:80"
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     depends_on:
-      - sqlserver.database
+      - sql-server
+    links:
+      - sql-server
 
   meusjogos.front:
     image: meus-jogos-front
     container_name: meus-jogos-front
     ports:
-      - "1234:80"
+      - "44313:80"
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     depends_on:
