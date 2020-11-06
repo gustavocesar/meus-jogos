@@ -1,6 +1,6 @@
 export default class Environment {
   constructor() {
-    this.api = "https://localhost:5001/v1";
+    this.api = "http://localhost:5000/v1";
 
     //endpoints
     this.jogos = "jogos";

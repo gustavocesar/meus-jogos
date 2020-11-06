@@ -40,7 +40,7 @@ namespace MeusJogos.Infra.Data.Context
                 //var connectionString = configuration.GetConnectionString("DefaultConnection");
 
                 //optionsBuilder.UseSqlServer(connectionString);
-                optionsBuilder.UseSqlServer("Data Source=localhost,1435;Initial Catalog=MEUS_JOGOS;User ID=sa;Password=Meus-jogos@123");
+                optionsBuilder.UseSqlServer("Data Source=sql-server,1433;Initial Catalog=MEUS_JOGOS;User ID=sa;Password=Meus-jogos@123");
             }
         }
     }
