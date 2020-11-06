@@ -35,6 +35,9 @@ docker-compose up -d
 ```
 
 ### Acesso
+ - http://localhost:44324
+ - http://localhost:5000 (Api)
 
+### Login
  - admin: 123456
  - user: 123456
