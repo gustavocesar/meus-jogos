@@ -33,14 +33,13 @@ namespace MeusJogos.Infra.Data.Context
         {
             if (!optionsBuilder.IsConfigured)
             {
-                //var configuration = new ConfigurationBuilder()
-                //     .SetBasePath(Directory.GetCurrentDirectory() + "/../../MyApiFolder")
-                //     .AddJsonFile("appsettings.json", false, true)
-                //     .Build();
-                //var connectionString = configuration.GetConnectionString("DefaultConnection");
+                var configuration = new ConfigurationBuilder()
+                    .SetBasePath(Directory.GetCurrentDirectory() + "/../../../Api")
+                    .AddJsonFile("appsettings.json", false, true)
+                    .Build();
+                var connectionString = configuration.GetConnectionString("DefaultConnection");
 
-                //optionsBuilder.UseSqlServer(connectionString);
-                optionsBuilder.UseSqlServer("Data Source=sql-server,1433;Initial Catalog=MEUS_JOGOS;User ID=sa;Password=Meus-jogos@123");
+                optionsBuilder.UseSqlServer(connectionString);
             }
         }
     }

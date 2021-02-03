@@ -1,6 +1,6 @@
 .vs
 .vscode
+.history
 obj
 bin
 TestResults
-Presentation/wwwroot/src/node_modules
