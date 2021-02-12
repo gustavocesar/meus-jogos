@@ -1,21 +1,18 @@
 const environment = {
   meusJogos: {
-    baseApi: "http://localhost:5000/v1",
+    baseApi: "https://localhost:5001/v1/",
+  },
+  auth: {
+    baseUrlAuth: "http://localhost:3000/",
+    // baseUrlAuth: "https://authhomol.sescgo.com.br/",
+    endPointLogin: "login",
+    endPointLogout: "logout",
+    // clientId: "pcg",
+    // responseType: "code",
+    // scope: "offline_access",
+    // logoutUrl: "http://localhost:8080",
+    routerNotAuth: ["/auth", "/auth/refresh-token"],
   },
 };
 
 export default environment;
-
-/*
-export default class Environment {
-  constructor() {
-    this.api = "http://localhost:5000/v1";
-
-    //endpoints
-    this.jogos = "jogos";
-    this.amigos = "amigos";
-    this.emprestimos = "emprestimos";
-    this.login = "auth/login";
-  }
-}
-*/

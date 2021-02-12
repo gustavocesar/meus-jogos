@@ -1,16 +1,24 @@
+import React, { useState, useEffect } from "react";
+
 import Head from "next/head";
 import Footer from "./footer";
 import Menu from "./menu";
+import Interceptor from "../services/auth/interceptor";
+
+import { Container, Row } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Row } from "react-bootstrap";
 
 export default function Layout({ children }) {
+  const [load, setLoad] = useState(false);
+
   return (
     <div className="container">
       <Head>
         <title>Meus Jogos</title>
         <link rel="icon" href="/icons/iconfinder_multimedia-19_809511.ico" />
       </Head>
+
+      <Interceptor setLoad={setLoad} load={load} />
 
       <main>
         <Row>
@@ -30,7 +38,7 @@ export default function Layout({ children }) {
 
         <hr />
 
-        {children}
+        <Container>{children}</Container>
       </main>
 
       <Footer />
